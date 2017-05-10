@@ -6,10 +6,13 @@
     About Us
   {{/link-to}}
 </div>
-
-{{#each model as |rentalUnit|}}
-  {{rental-listing rental=rentalUnit}}
-{{/each}}
+{{list-filter filter=(action 'filterByCity') as |rentals|}}
+  <ul>
+    {{#each model as |rentalUnit|}}
+      {{rental-listing rental=rentalUnit}}
+    {{/each}}
+  </ul>
+{{/list-filter}}
 
 
 
