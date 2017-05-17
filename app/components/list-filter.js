@@ -24,9 +24,10 @@ export default Ember.Component.extend({
 
     actions: {
         handleFilterEntry() {
+            console.log('shouldPrintQuickly');
             let filterInputValue = this.get('value');
             let filterAction = this.get('filter');
-            filterAction(filterInputValue).then((filterResults) => this.set('results', filterResults));
+            filterAction(filterInputValue).then((filterResults) => console.log('filterResults: ' + filterResults));//this.set('results', filterResults));
         }
     }
 });
